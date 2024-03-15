@@ -1,10 +1,8 @@
 import pandas as pd
 
-# Load a CSV file into a DataFrame
-df = pd.read_csv('path/to/your/data.csv')
 
-# View the first few rows of the DataFrame
-print(df.head())
-
-# Basic information about the DataFrame
-print(df.info())
+def load_and_view_data(file_path):
+    df = pd.read_csv(file_path)
+    print("Erste fünf Zeilen des Datensatzes:")
+    print(df.head())
+    return df
