@@ -1,43 +1,9 @@
-import pandas as pd
+from loading_and_viewing_data import load_and_view_data
+from data_cleaning import clean_data
+from data_transformation import transform_data
+from data_analysis import analyze_data
 
 
-# Funktion zum Laden und Anzeigen von Daten
-def load_and_view_data(file_path):
-    df = pd.read_csv(file_path)
-    print("Erste fünf Zeilen des Datensatzes:")
-    print(df.head())
-    return df
-
-
-# Funktion zur Datenbereinigung
-def clean_data(df):
-    # Einfache Bereinigung: Entferne Zeilen mit fehlenden Werten
-    df_clean = df.dropna()
-    print("\nDaten nach der Bereinigung:")
-    print(df_clean.info())
-    return df_clean
-
-
-# Funktion zur Datentransformation
-def transform_data(df):
-    # Beispieltransformation: Gruppierung nach einer Spalte und Berechnung des Durchschnitts
-    if 'Kategorie' in df.columns:  # Ersetze 'Kategorie' durch einen tatsächlichen Spaltennamen deiner Wahl
-        grouped_df = df.groupby('Kategorie').mean()
-        print("\nDaten nach der Transformation (Gruppierung und Durchschnitt):")
-        print(grouped_df.head())
-    else:
-        print("\n'Die Spalte 'Kategorie' existiert nicht im DataFrame.")
-        grouped_df = df
-    return grouped_df
-
-
-# Funktion für einfache Datenanalyse
-def analyze_data(df):
-    print("\nDeskriptive Statistik des Datensatzes:")
-    print(df.describe())
-
-
-# Hauptfunktion, die alles zusammenführt
 def main():
     file_path = 'path/to/your/data.csv'  # Ersetze dies durch den tatsächlichen Pfad zu deinem CSV-Datensatz
 
@@ -48,7 +14,8 @@ def main():
     df_clean = clean_data(df)
 
     # Daten transformieren
-    df_transformed = transform_data(df_clean)
+    df_transformed = transform_data(df_clean,
+                                    column_name='DeineSpaltenbezeichnung')  # Ersetze 'DeineSpaltenbezeichnung'
 
     # Datenanalyse durchführen
     analyze_data(df_transformed)

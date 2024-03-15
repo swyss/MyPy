@@ -11,3 +11,7 @@ print(df.corr())
 
 # Simple visualization (requires matplotlib)
 df['column_name'].hist()
+
+
+def analyze_data():
+    return None

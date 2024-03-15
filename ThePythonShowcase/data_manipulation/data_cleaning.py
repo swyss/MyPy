@@ -11,3 +11,7 @@ df_filled = df.fillna(df.mean())
 
 # Filter rows based on a condition
 df_filtered = df[df['column_name'] > some_value]
+
+
+def clean_data():
+    return None

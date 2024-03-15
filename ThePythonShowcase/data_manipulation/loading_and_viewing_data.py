@@ -24,9 +24,9 @@ clean_df = df.dropna()
 df['new_column'] = df['High'] * 10
 print(df.head())
 
-
 # Histogram of a numerical column
 df['new_column'].hist()
+
 
 # # Bar plot of a categorical column
 # df['categorical_column'].value_counts().plot(kind='bar')
@@ -45,6 +45,7 @@ def load_and_view_data(file_path):
     print(df.head())
     return df
 
+
 def load_clean_and_view_data(file_path):
     df = pd.read_csv(file_path)
     print("First five rows of the dataset:")
@@ -58,6 +59,7 @@ def load_clean_and_view_data(file_path):
     print("\nData after transformation (grouping and mean):")
     print(grouped_df.head())
     return df_clean, grouped_df
+
 
 def load_clean_transform_analyze_and_visualize_data(file_path):
     # Load data
@@ -93,8 +95,3 @@ if __name__ == "__main__":
     load_clean_and_view_data(file_path)
 
     load_clean_transform_analyze_and_visualize_data(file_path)
-
-
-
-
-
