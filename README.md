@@ -1,2 +1,4 @@
 # MyPy
-Python Showcase
+A Python Showcase
+
+![Logo](./assets/mypi_logo.png)
